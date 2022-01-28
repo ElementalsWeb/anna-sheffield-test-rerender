@@ -7,7 +7,7 @@ const fs = require("fs");
 // @ts-ignore
 const cors = require("cors");
 // @ts-ignore
-const fetch: any = require("fetch");
+let fetch: any = require("fetch");
 // @ts-ignore
 const shopify = require("shopify");
 // @ts-ignore
