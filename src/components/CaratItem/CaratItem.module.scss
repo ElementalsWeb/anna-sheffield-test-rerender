@@ -1,0 +1,21 @@
+.carat {
+  color: #969696;
+  letter-spacing: 0.11em;
+  font-size: 10px;
+  line-height: 13px;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    color: #000000;
+    transition: 0.3s;
+  }
+  &.active {
+    pointer-events: none;
+    color: #969696 !important;
+    border-bottom: 1px solid #000000;
+  }
+}
+.carat_none{
+  display: none;
+}

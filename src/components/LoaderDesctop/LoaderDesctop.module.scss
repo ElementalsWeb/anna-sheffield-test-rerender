@@ -1,0 +1,30 @@
+.loader {
+  animation: example 1s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes example {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(8px);
+}
+.loaderDesctopImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

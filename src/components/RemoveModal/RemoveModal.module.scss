@@ -1,0 +1,82 @@
+.modal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & header {
+    font-family: "Meison Neue Book", sans-serif;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 1.4px;
+  }
+  & main {
+    margin-top: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.btn {
+  text-transform: uppercase;
+  background: #ffffff;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 171px;
+  width: 100%;
+  padding: 13px;
+  padding-top: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.11em;
+  &_black {
+    background-color: #000;
+    color: #fff;
+    transition: 0.3s;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+  &_white {
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+@media screen and(max-width:992px) {
+  .modal {
+    & header {
+      margin-top: 59px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    & main {
+      margin-top: 49px;
+      flex-direction: column-reverse;
+
+      & button {
+        width: 100%;
+      }
+    }
+  }
+  .btn {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .btn_black {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 62px;
+  }
+}

@@ -1,0 +1,88 @@
+button {
+  padding: 0;
+}
+.buttonNext {
+  width: 100vw;
+  pointer-events: none;
+  display: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  color: #dbdbdb;
+  text-transform: uppercase;
+  & .container {
+    display: flex;
+    align-items: center;
+  }
+  & .arrow_right {
+    margin-left: 21px;
+    align-items: center;
+  }
+  &_active {
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    & .container {
+      display: flex;
+      align-items: center;
+    }
+
+    & svg path {
+      fill: #000;
+    }
+    & .arrow_right {
+      align-items: center;
+      margin-left: 21px;
+    }
+  }
+}
+.arrow_left {
+  pointer-events: auto;
+  left: 0px;
+  height: 52px;
+  width: 87px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #000;
+
+  & svg {
+    transform: rotate(180deg);
+
+    & path {
+      fill: #000;
+    }
+  }
+}
+@media screen and(max-width:992px) {
+  .buttonNext {
+    margin: 1px 0;
+    display: flex;
+    & .arrow_right {
+      margin-left: 21px;
+      align-items: center;
+    }
+    &_active {
+      display: flex;
+      width: 100vw;
+      & .arrow_right {
+        margin-left: 21px;
+        align-items: center;
+      }
+    }
+  }
+  .withBackArrow {
+    justify-content: space-between;
+  }
+}

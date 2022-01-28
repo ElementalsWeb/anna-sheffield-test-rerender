@@ -1,0 +1,246 @@
+.stepper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  align-items: center;
+  position: relative;
+  & .step {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 2;
+    padding: 0 5px 0 28px;
+    display: flex;
+    align-items: center;
+    & span {
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      color: #000000;
+      font-family: "Jenriv", sans-serif;
+      pointer-events: none;
+    }
+    & .text, .textMobile {
+      margin-top: 1px;
+      max-width: 225px;
+      font-size: 14px;
+      font-family: 'Meison Neue Book';
+      font-weight: normal;
+      line-height: 18px;
+      letter-spacing: 1px;
+      color: #000000;
+      margin-left: 14px;
+      pointer-events: none;
+    }
+    & .textMobile{
+      display: none;
+    }
+  }
+  &_wrap {
+    width: 105%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    & svg{
+      height: 50px;
+    }
+    &.active {
+      & svg{
+        &  path {
+          fill: #ffffff;
+          stroke: #e3e3e3;
+        }
+      }
+      & .text, .textMobile{
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.ShortArrowStepper{
+  display: none;
+}
+.LongArrowStepperMobileFinish{
+  display: none;
+}
+@media screen and(max-width:1230px){
+  .stepper {
+    
+    & .step {
+      padding: 0 5px 0 15px;
+
+      & .text{
+        margin-left: 6px;
+        width: 72%;
+      }
+    }
+    &_wrap{
+      
+      & svg{
+        height: 52px;
+      }
+      
+    }
+  }
+}
+@media screen and(max-width:1100px){
+  .stepper {
+    
+    &_wrap{
+      & svg{
+        height: 58px;
+      } 
+    }
+  }
+}
+@media screen and(max-width:992px) {
+  .none{
+    display: none;
+  }
+  .stepper {
+    & .step{
+
+
+      & .text{
+        font-size: 9px;
+      }
+    }
+    margin: 0;
+    &_wrap{
+      width: 105%;
+      & svg{
+        width: 100%;
+      }
+    }
+    &_wrap:last-child{
+      width: 100%;
+    }
+  }
+  
+}
+@media screen and(max-width:560px){
+  .stepper{
+    & .step {
+      & .text{
+        display: none;
+      }
+      & .textMobile{
+        display: block;
+        width: 80%;
+        font-size: 9px;
+      }
+      
+    }
+    & .step {
+      padding: 0 5px 0 15px;
+
+      & .textMobile{
+        margin-left: 6px;
+      }
+    }
+  }
+}
+@media screen and(max-width:490px){
+  .LongArrowStepperMobileFinish{
+    display: block;
+    & svg{
+      width: 100%;
+    }
+  }
+  
+  .LongArrowStepper{
+    display: none;
+  }
+  .ShortArrowStepper{
+    display: block;
+  }
+  
+  .stepper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    &_wrap{
+      width: auto;
+      & svg {
+        width: 118%;
+      }
+      & .step{
+        & .textMobile{
+          display:none;
+          line-height: 12px;
+        }
+      }
+
+      & svg{
+        height: 32px;
+      }
+    }
+    &_wrap:last-child{
+      width: auto;
+    }
+    & .step {
+      height: 90%;
+      width: 110%;
+      padding: 0 5px 0 49%;
+      
+      & span{
+        font-size: 18px;
+      }      
+    }
+  
+    & .active{
+      & .textMobile{
+        display: block;
+        margin-left: 0px;
+      }
+      & .step {
+        height: 90%;
+        padding: 0 3px 0 15px;
+        margin-left: 5px;
+        & span {
+         margin-right: 10px;
+        }
+      }      
+    }
+  }
+  .basket{
+   width: 90%;
+  }
+}
+@media screen and(max-width:400px){
+  .stepper {
+    width: 90%;
+    margin: 0;
+
+    &_wrap {
+      & svg {
+        width: 118%;
+      }
+    }
+    & .active{
+      & .textMobile{
+        width: 86%;
+      }
+    }
+  }
+  .config{
+    margin: 0 16px;
+  }
+}
+@media screen and(max-width:350px){
+  .stepper {
+    &_wrap{
+      & svg{
+        height: 45px;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.desktop {
+  height: 100%;
+  display: block;
+  margin-left: 2.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 442px;
+  width: 100%;
+  position: relative;
+}
+.mobil {
+  display: none;
+  // position: relative;
+  width: 100%;
+}
+.controls {
+  width: 100%;
+  margin-left: 5.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & .control_config {
+    height: calc(100% - 68px);
+  }
+  & .control_full {
+    height: 100%;
+  }
+}
+
+@media screen and(max-width:992px) {
+  .desktop {
+    display: none;
+  }
+  .mobil {
+    justify-content: flex-end;
+    height: 266px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    max-height: 294px;
+    height: auto;
+  }
+  .controlls {
+    margin-left: 0;
+    z-index: 11;
+    justify-content: flex-end;
+    height: 267px;
+    display: flex;
+    flex-direction: column;
+  }
+  .wrap_list {
+    height: calc(100% - 56px);
+  }
+  .wrap_engagement {
+    border-top: 1px solid #000;
+    height: calc(100% - 100px);
+    z-index: 11;
+  }
+}
+
+.loaderDesctopImg {
+  position: relative;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

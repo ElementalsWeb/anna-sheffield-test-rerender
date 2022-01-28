@@ -1,0 +1,20 @@
+.ringDataMobileContainer{
+    width: 100%;
+    position: absolute;
+    display:none;
+    justify-content: center;
+
+    & .colors{
+        width: 122px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 11;
+    }
+    
+}
+@media screen and(max-width:992px){
+    .ringDataMobileContainer{
+        display: flex;
+    }
+}

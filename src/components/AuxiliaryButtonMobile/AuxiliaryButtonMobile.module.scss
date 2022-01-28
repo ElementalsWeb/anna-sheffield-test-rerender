@@ -1,0 +1,33 @@
+.btn_wrap{
+    text-transform: uppercase;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 16px;
+    border: 1px solid #000;
+    border-bottom: none;
+    background-color:  #F5F5F5;;
+    font-size: 11px;
+    
+    & .info_section svg{
+        width: 8px;
+        margin-right: 8px;
+    }
+    & .btn_arrow svg{
+       transform: rotate(90deg);
+    }
+    & .info_section{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.white{
+    background-color: #fff;
+}
+@media screen and(max-width:992px){
+    .btn_wrap{
+        display: flex;
+    }
+}
