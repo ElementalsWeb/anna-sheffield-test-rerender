@@ -1,15 +1,22 @@
 //@ts-ignore
 const path = require('path');
+// @ts-ignore
 const express = require("express");
+// @ts-ignore
 const fs = require("fs");
+// @ts-ignore
 const cors = require("cors");
 // @ts-ignore
-const fetch:any = require("fetch");
+const fetch: any = require("fetch");
+// @ts-ignore
 const shopify = require("shopify");
+// @ts-ignore
 const getPriceRings = require("./api/index.js");
 
+// @ts-ignore
 (global as any).fetch = fetch;
 
+// @ts-ignore
 const app = express();
 //@ts-ignore
 const __dirname = path.resolve();
@@ -57,12 +64,12 @@ app.use("/", async (req, res, next) => {
 // @ts-ignore
 app.get("/getPrices", async function (req, res, next) {
   const filePath: any = path.resolve(__dirname, "dist", "file", "price.json");
-// @ts-ignore
+  // @ts-ignore
   const data: any = await fs.readFileSync(filePath, {
     encoding: "utf8",
     flag: "r",
   });
-// @ts-ignore
+  // @ts-ignore
   return res.json(JSON.parse(data));
 });
 
