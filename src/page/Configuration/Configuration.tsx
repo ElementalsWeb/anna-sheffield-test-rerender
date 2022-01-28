@@ -16,7 +16,7 @@ export const Configuration = () => {
 
   const search = useLocation().search;
   const type = new URLSearchParams(search).get('type');
-  
+
   let wrapView = `${s.wrap_view}`;
 
   const dispatch = useDispatch();
@@ -34,22 +34,24 @@ export const Configuration = () => {
       fetchConfig();
     }
   }, []);
-   
+
   return (
-    <section className={s.section_full}>
-      <div className={wrapView}>
-        <Stepper></Stepper>
-        <div className={s.view}>
-          <ViewEmpty />
-          <div className={s.player_screen}>
-            <AuxiliaryButton />
-            <PlayerThreeKit />
-          </div>
-        </div>
-      </div>
-      <ControlsComponent />
-      <WrapModals />
-    </section>
+    <>
+      {/* // <section className={s.section_full}> */}
+      {/* <div className={wrapView}> */}
+      {/* <Stepper></Stepper> */}
+      {/* <div className={s.view}> */}
+      {/* <ViewEmpty /> */}
+      {/* <div className={s.player_screen}> */}
+      {/* // <AuxiliaryButton /> */}
+      <PlayerThreeKit />
+      {/* </div>
+        </div> */}
+      {/* // </div> */}
+      {/* <ControlsComponent /> */}
+      {/* <WrapModals /> */}
+      {/* // </section> */}
+    </>
   );
 };
 
