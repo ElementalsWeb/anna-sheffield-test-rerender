@@ -41,7 +41,7 @@ export const PlayerThreeKit = () => {
         .threekitPlayer({
           authToken: THREEKIT_PARAMS['authToken'],
           el: playerEl.current,
-          showConfigurator: true,
+          
           assetId: THREEKIT_PARAMS['assetId'],
           initialConfiguration: startThreeKit,
           showLoadingProgress: {

@@ -34,25 +34,21 @@ export const Configuration = () => {
       fetchConfig();
     }
   }, []);
-console.log('asddas');
 
-  return (
-    <>
-      {/* // <section className={s.section_full}> */}
-      {/* <div className={wrapView}> */}
-      {/* <Stepper></Stepper> */}
-      {/* <div className={s.view}> */}
-      {/* <ViewEmpty /> */}
-      {/* <div className={s.player_screen}> */}
-      {/* // <AuxiliaryButton /> */}
-      <PlayerThreeKit />
-      {/* </div>
-        </div> */}
-      {/* // </div> */}
-      {/* <ControlsComponent /> */}
-      {/* <WrapModals /> */}
-      {/* // </section> */}
-    </>
+  return (<>1
+    <section className={s.section_full}>
+      <div className={wrapView}>
+        <Stepper></Stepper>
+        <div className={s.view}>
+          <div className={s.player_screen}>
+            <AuxiliaryButton />
+            <PlayerThreeKit />
+          </div>
+        </div>
+      </div>
+      <ControlsComponent />
+      <WrapModals />
+    </section></>
   );
 };
 
