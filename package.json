@@ -44,7 +44,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "watch": "react-scripts start",
-    "build": "tsc -p tsServerconfig.json && react-scripts build ",
+    "build": " react-scripts build ",
     "dev1": "nodemon node server/server.js",
     "dev2": "tsc -p tsServerconfig.json",
     "dev": " react-scripts start",
