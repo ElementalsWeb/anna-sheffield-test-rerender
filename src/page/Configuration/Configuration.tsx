@@ -35,7 +35,7 @@ export const Configuration = () => {
     }
   }, []);
 
-  return (<>4
+  return (<>5
     <section className={s.section_full}>
       <div className={wrapView}>
         <Stepper></Stepper>
