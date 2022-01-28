@@ -60,8 +60,8 @@ export const PlayerThreeKit = () => {
 
 
           // let productsPrice = await getPriceRings()
-          let productsPrice = await getAllPriceProduct()
-
+          // let productsPrice = await getAllPriceProduct()
+          let productsPrice: any = {}
           await dispatch(loadConfig({ listPrice: productsPrice }));
           if (!!getRotationAngles()) {
             let props: any = getRotationAngles();
