@@ -55,7 +55,7 @@ export const PlayerThreeKit = () => {
 
           api.tools.removeTool('zoom');
           window.configurator = await api.getConfigurator();
-          await window.configurator.prefetchAttributes(['Rotation Angle'])
+          // await window.configurator.prefetchAttributes(['Rotation Angle'])
 
 
 
