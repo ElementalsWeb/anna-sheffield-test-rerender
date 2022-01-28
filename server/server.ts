@@ -1,12 +1,14 @@
 //@ts-ignore
 const path = require('path');
 const express = require("express");
-// import fs from "fs";
-// import cors from "cors";
-// import fetch from "node-fetch"; 
-// import shopify from "shopify-buy";
-// import getPriceRings from "./api/index.js";
-// (global as any).fetch = fetch;
+const fs = require("fs");
+const cors = require("cors");
+// @ts-ignore
+const fetch:any = require("fetch");
+const shopify = require("shopify");
+const getPriceRings = require("./api/index.js");
+
+(global as any).fetch = fetch;
 
 const app = express();
 //@ts-ignore
@@ -17,47 +19,52 @@ if (process.env.NODE_ENV === "development") {
   PORT = process.env.DEV_PORT_API;
 }
 // // Middlewares
-// app.use(cors());
-// app.use("/", async (req, res, next) => {
-//   // console.log('werwer');
+app.use(cors());
+// @ts-ignore
+app.use("/", async (req, res, next) => {
+  // console.log('werwer');
+  // @ts-ignore
+  const queryParams: any = req.query;
 
-//   const queryParams: any = req.query;
+  if (
+    queryParams["update_pricing"] &&
+    queryParams["update_pricing"] === "true"
+  ) {
+    // @ts-ignore
+    const client: any = shopify.buildClient(
+      {
+        domain: "annasheffield.myshopify.com",
+        storefrontAccessToken: "6ce2afdc8e2e91cf7c8c3ebcffb3c629",
+      },
+    );
+    // @ts-ignore
+    let priceRings: any = await getPriceRings(client);
+    const filePath: any = path.resolve(__dirname, "dist", "file", "price.json");
+    const dataWriteFile: any = JSON.stringify(priceRings);
 
-//   if (
-//     queryParams["update_pricing"] &&
-//     queryParams["update_pricing"] === "true"
-//   ) {
-
-//     const client: any = shopify.buildClient(
-//       {
-//         domain: "annasheffield.myshopify.com",
-//         storefrontAccessToken: "6ce2afdc8e2e91cf7c8c3ebcffb3c629",
-//       },
-//     ); 
-//     let priceRings: any = await getPriceRings(client); 
-//     const filePath: any = path.resolve(__dirname, "dist", "file", "price.json");
-//     const dataWriteFile: any = JSON.stringify(priceRings);
-
-//     try {
-//       fs.writeFileSync(filePath, dataWriteFile);
-//       return res.json({ 'status': 'ok' });
-
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   }
-//   next();
-// });
-// app.get("/getPrices", async function (req, res, next) {
-//   const filePath: any = path.resolve(__dirname, "dist", "file", "price.json");
-
-//   const data: any = await fs.readFileSync(filePath, {
-//     encoding: "utf8",
-//     flag: "r",
-//   });
-
-//   return res.json(JSON.parse(data));
-// });
+    try {
+      fs.writeFileSync(filePath, dataWriteFile);
+      // @ts-ignore
+      return res.json({ 'status': 'ok' });
+      // @ts-ignore
+    } catch (error) {
+      // @ts-ignore
+      console.error(error);
+    }
+  }
+  next();
+});
+// @ts-ignore
+app.get("/getPrices", async function (req, res, next) {
+  const filePath: any = path.resolve(__dirname, "dist", "file", "price.json");
+// @ts-ignore
+  const data: any = await fs.readFileSync(filePath, {
+    encoding: "utf8",
+    flag: "r",
+  });
+// @ts-ignore
+  return res.json(JSON.parse(data));
+});
 
 // ROUTES
 app.use(express.json());
