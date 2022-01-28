@@ -34,6 +34,7 @@ export const Configuration = () => {
       fetchConfig();
     }
   }, []);
+console.log('asddas');
 
   return (
     <>
