@@ -1,7 +1,10 @@
 {
   "name": "anna-sheffield-test-rerender",
   "version": "0.1.0",
-  "private": true,
+  "private": true, 
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -40,7 +43,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "watch": "react-scripts start",
-    "build": " react-scripts build ",
+    "build": "tsc -p tsServerconfig.json && react-scripts build ",
     "dev1": "nodemon node server/server.js",
     "dev2": "tsc -p tsServerconfig.json",
     "dev": " react-scripts start",

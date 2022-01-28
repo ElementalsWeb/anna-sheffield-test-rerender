@@ -1,5 +1,7 @@
-import path from "path";
-import express from "express";
+"use strict";
+//@ts-ignore
+var path = require('path');
+var express = require("express");
 // import fs from "fs";
 // import cors from "cors";
 // import fetch from "node-fetch"; 
@@ -7,6 +9,7 @@ import express from "express";
 // import getPriceRings from "./api/index.js";
 // (global as any).fetch = fetch;
 var app = express();
+//@ts-ignore
 var __dirname = path.resolve();
 var PORT = process.env.PORT || 3001;
 if (process.env.NODE_ENV === "development") {
@@ -48,8 +51,8 @@ if (process.env.NODE_ENV === "development") {
 //   return res.json(JSON.parse(data));
 // });
 // ROUTES
-// app.use(express.json());
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "build")));
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });

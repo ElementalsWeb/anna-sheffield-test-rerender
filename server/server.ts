@@ -1,5 +1,6 @@
-import path from "path";
-import express from "express";
+//@ts-ignore
+const path = require('path');
+const express = require("express");
 // import fs from "fs";
 // import cors from "cors";
 // import fetch from "node-fetch"; 
@@ -8,6 +9,7 @@ import express from "express";
 // (global as any).fetch = fetch;
 
 const app = express();
+//@ts-ignore
 const __dirname = path.resolve();
 let PORT: any = process.env.PORT || 3001;
 
@@ -58,10 +60,10 @@ if (process.env.NODE_ENV === "development") {
 // });
 
 // ROUTES
-// app.use(express.json());
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "build")));
 
-app.get("*", function (req, res) {
+app.get("*", function (req: any, res: any) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 app.listen(PORT, function () {
