@@ -64,11 +64,11 @@ export const PlayerThreeKit = () => {
           // let productsPrice = await getAllPriceProduct()
           let productsPrice: any = {}
           await dispatch(loadConfig({ listPrice: productsPrice }));
-          // if (!!getRotationAngles()) {
-          //   let props: any = getRotationAngles();
-          //   await dispatch(setViewAngle(props));
-          //   await window.player.tools.addTool(rotateTool(props));
-          // }
+          if (!!getRotationAngles()) {
+            let props: any = getRotationAngles();
+            await dispatch(setViewAngle(props));
+            await window.player.tools.addTool(rotateTool(props));
+          }
 
         });
     }
