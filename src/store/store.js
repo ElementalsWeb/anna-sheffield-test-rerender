@@ -2,7 +2,7 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./reducers";
 import thunk from "redux-thunk";
-import { threeKitUpdate } from "./middleware/threeKitUpdate";
+import { threeKitUpdate } from "./middleware/threeKitUpdate.ts";
 
 const store = createStore(
   rootReducer,
