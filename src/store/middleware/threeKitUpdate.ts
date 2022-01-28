@@ -153,7 +153,6 @@ export const threeKitUpdate = (store: any) => (next: any) => (action: any) => {
             let tempThreeKitObj: any = startThreeKitObject;
             let threekitAtribute = window.configurator.getAttributes();
 
-            window.configurator.setConfiguration({})
             activeElement.forEach((ring: ThreeKitParams) => {
 
                 console.log(ring['nameAttribute']);
