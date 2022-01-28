@@ -50,7 +50,7 @@ export const PlayerThreeKit = () => {
         })
         .then(async (api: any) => {
           window.player = api;
-          await api.when('preloaded');
+          // await api.when('preloaded');
           await window.player.when('loaded');
 
           api.tools.removeTool('zoom');
@@ -63,11 +63,11 @@ export const PlayerThreeKit = () => {
           // let productsPrice = await getAllPriceProduct()
           let productsPrice: any = {}
           await dispatch(loadConfig({ listPrice: productsPrice }));
-          if (!!getRotationAngles()) {
-            let props: any = getRotationAngles();
-            await dispatch(setViewAngle(props));
-            await window.player.tools.addTool(rotateTool(props));
-          }
+          // if (!!getRotationAngles()) {
+          //   let props: any = getRotationAngles();
+          //   await dispatch(setViewAngle(props));
+          //   await window.player.tools.addTool(rotateTool(props));
+          // }
 
         });
     }
