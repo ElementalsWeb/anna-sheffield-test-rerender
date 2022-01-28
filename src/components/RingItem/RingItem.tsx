@@ -84,11 +84,10 @@ export const RingItem = ({ ...props }) => {
   }
 
   useEffect(() => {
-    if(isActive) {
+    if (isActive) {
       refEl.current?.scrollIntoView()
     }
   }, [])
-
  
   return (
     <div ref={refEl} className={classItem}>

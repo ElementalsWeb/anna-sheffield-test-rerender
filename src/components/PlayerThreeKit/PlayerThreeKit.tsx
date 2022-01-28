@@ -6,6 +6,7 @@ import load3kit from "../../utils/load3kit";
 import s from "./PlayerThreeKit.module.scss";
 import { getRotationAngles, rotateTool } from "../../threekit/rotation2DPhoto";
 import { getAllPriceProduct, getPriceRings } from "../../utils/api";
+import { priceTest } from "../../utils/testPrice";
 declare global {
   interface Window {
     threekitPlayer: any;
@@ -56,20 +57,19 @@ export const PlayerThreeKit = () => {
 
           api.tools.removeTool('zoom');
           window.configurator = await api.getConfigurator();
-           
-          if (window.innerWidth > 992) {
-            window.configurator.prefetchAttributes(['Rotation Angle']).then((res: any) => {
-               
-            })
-          }
 
-           
+
+          await window.configurator.prefetchAttributes(['Rotation Angle'])
 
 
 
+
+
+
+          let productsPrice = priceTest
           // let productsPrice = await getPriceRings()
           // let productsPrice = await getAllPriceProduct()
-          let productsPrice: any = {}
+
           await dispatch(loadConfig({ listPrice: productsPrice }));
           if (!!getRotationAngles()) {
             let props: any = getRotationAngles();
