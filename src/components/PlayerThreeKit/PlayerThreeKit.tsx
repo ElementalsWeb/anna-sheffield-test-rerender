@@ -41,7 +41,7 @@ export const PlayerThreeKit = () => {
         .threekitPlayer({
           authToken: THREEKIT_PARAMS['authToken'],
           el: playerEl.current,
-          
+
           assetId: THREEKIT_PARAMS['assetId'],
           initialConfiguration: startThreeKit,
           showLoadingProgress: {
@@ -56,7 +56,14 @@ export const PlayerThreeKit = () => {
 
           api.tools.removeTool('zoom');
           window.configurator = await api.getConfigurator();
-          // await window.configurator.prefetchAttributes(['Rotation Angle'])
+           
+          if (window.innerWidth > 992) {
+            window.configurator.prefetchAttributes(['Rotation Angle']).then((res: any) => {
+               
+            })
+          }
+
+           
 
 
 
