@@ -16,7 +16,7 @@ declare global {
 
 export const THREEKIT_PARAMS = {
   threekitUrl: "https://preview.threekit.com/",
-  authToken: "9072b19b-7a02-4382-8038-d44d7931a1a7",
+  authToken: "fcf4e533-3cc5-4d63-bb7f-0ccc10fe6679",
   assetId: "d0088bc7-4ef9-4382-84d7-03cbfd7b9e4c",
   elementId: "2afa5b5f-48fe-4f28-8e0f-a1b8acb0aac0",
   orgId: "fb84f021-82c5-44b2-bbd0-5565b2661a1c",
